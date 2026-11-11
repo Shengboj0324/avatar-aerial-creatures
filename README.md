@@ -32,6 +32,19 @@ All files are on the [**v2.0.0 release page**](https://github.com/Shengboj0324/a
 2. Put the Paper jar in `plugins/` and start the server.
 3. The plugin serves its resource pack on port **8163**. Open that port, set `resource-pack.public-host`, or switch `resource-pack.mode` to `url` and host the pack yourself (see `config.yml`).
 
+### Server hosts (BisectHosting, Apex, Shockbyte…)
+Shared hosts usually only open your game port, so serve the pack from this release instead of the built-in web server. In `plugins/AvatarAerialCreatures/config.yml`:
+
+```yaml
+resource-pack:
+  mode: url
+  url: "https://github.com/Shengboj0324/avatar-aerial-creatures/releases/download/v2.0.0/avatar_aerial_creatures_pack.zip"
+  sha1: "fbee2582f3318d4410cf4c9aa826a2673ae7cd84"
+  required: true
+```
+
+Then restart the server. Ops can test with `/avatar spawn mountain_banshee`, and `/avatar pack` re-sends the pack to anyone who missed it.
+
 ## How it works
 
 **Finding them.** Banshees roost on bare mountain peaks above Y 150, usually in pairs. The Leonopteryx lives alone above Y 120, and it's rare.
